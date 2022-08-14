@@ -25,7 +25,7 @@ export async function getStaticProps() {
     `${process.env.NEXT_PUBLIC_SERVER_URL}/plants/bestSellingPlants`
   );
   const specialOffers = await axios.get(
-    `${process.env.NEXT_PUBLIC_SERVER_URL}/specialOffers`
+    `${process.env.NEXT_PUBLIC_SERVER_URL}/offers`
   );
 
   return {
