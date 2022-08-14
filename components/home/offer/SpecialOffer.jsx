@@ -10,10 +10,6 @@ export default function SpecialOffer() {
   const data = useSelector(selectAllSpecialOffers);
   const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    console.log(data);
-  }, []);
-
   function nextImage() {
     if (index < data.length - 1) {
       setIndex(index + 1);

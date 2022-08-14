@@ -9,7 +9,6 @@ import { setSpecialOffer } from "../src/features/plants/specialOfferSlice";
 export default function Index({ offer, bestSellingProducts, specialOffers }) {
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log(specialOffers);
     dispatch(setOfferPlants(offer));
     dispatch(setBestSellingPlants(bestSellingProducts));
     dispatch(setSpecialOffer(specialOffers));
@@ -34,6 +33,6 @@ export async function getStaticProps() {
       bestSellingProducts: bestSellingProducts.data,
       specialOffers: specialOffers.data,
     },
-    revalidate: 60 * 60,
+    revalidate: 60,
   };
 }
