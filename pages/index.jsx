@@ -28,13 +28,12 @@ export async function getStaticProps() {
     `${process.env.NEXT_PUBLIC_SERVER_URL}/specialOffers`
   );
 
-  console.log(offer.data);
-
   return {
     props: {
       offer: offer.data,
       bestSellingProducts: bestSellingProducts.data,
       specialOffers: specialOffers.data,
     },
+    revalidate: 60 * 60,
   };
 }
