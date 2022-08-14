@@ -10,9 +10,9 @@ export default function Index({ offer, bestSellingProducts, specialOffers }) {
   const dispatch = useDispatch();
   useEffect(() => {
     console.log(specialOffers);
-    //   dispatch(setOfferPlants(offer));
-    //   dispatch(setBestSellingPlants(bestSellingProducts));
-    //   dispatch(setSpecialOffer(specialOffers));
+    dispatch(setOfferPlants(offer));
+    dispatch(setBestSellingPlants(bestSellingProducts));
+    dispatch(setSpecialOffer(specialOffers));
   }, [offer, bestSellingProducts]);
   return <Home />;
 }
@@ -27,6 +27,8 @@ export async function getStaticProps() {
   const specialOffers = await axios.get(
     `${process.env.NEXT_PUBLIC_SERVER_URL}/specialOffers`
   );
+
+  console.log(offer);
 
   return {
     props: {
