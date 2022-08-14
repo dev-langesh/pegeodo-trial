@@ -73,7 +73,7 @@ export default function MakeOffer() {
           onChange={changeHandler}
           value={state.from}
           name="from"
-          type="date"
+          type="datetime-local"
           id="from"
           placeholder="Starting time"
           className="p-2 border"
@@ -83,7 +83,7 @@ export default function MakeOffer() {
           onChange={changeHandler}
           value={state.to}
           name="to"
-          type="date"
+          type="datetime-local"
           id="to"
           placeholder="Ending time"
           className="p-2 border"

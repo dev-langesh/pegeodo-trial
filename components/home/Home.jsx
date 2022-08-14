@@ -13,8 +13,13 @@ function Home() {
   return (
     <div className="space-y-8 ">
       <Slider />
-      <Title text="Special Offers" />
-      {data?.length !== 0 && <SpecialOffer />}
+
+      {data?.length !== 0 && (
+        <>
+          <Title text="Special Offers" />
+          <SpecialOffer />
+        </>
+      )}
       <Title text="Exclusive Offers" />
       <ExclusiveOffer />
       <Title text="Best Selling Products" />
