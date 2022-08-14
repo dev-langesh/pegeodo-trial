@@ -1,18 +1,18 @@
 import axios from "axios";
 import { useEffect } from "react";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import Home from "../components/home/Home";
-// import { setBestSellingPlants } from "../src/features/plants/bestSellingPlants";
-// import { setOfferPlants } from "../src/features/plants/offerPlantsSlice";
-// import { setSpecialOffer } from "../src/features/plants/specialOfferSlice";
+import { setBestSellingPlants } from "../src/features/plants/bestSellingPlants";
+import { setOfferPlants } from "../src/features/plants/offerPlantsSlice";
+import { setSpecialOffer } from "../src/features/plants/specialOfferSlice";
 
 export default function Index({ offer, bestSellingProducts, specialOffers }) {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   useEffect(() => {
     console.log(specialOffers);
-    // dispatch(setOfferPlants(offer));
-    // dispatch(setBestSellingPlants(bestSellingProducts));
-    // dispatch(setSpecialOffer(specialOffers));
+    dispatch(setOfferPlants(offer));
+    dispatch(setBestSellingPlants(bestSellingProducts));
+    dispatch(setSpecialOffer(specialOffers));
   }, [offer, bestSellingProducts]);
   return <Home />;
 }
